@@ -1321,7 +1321,7 @@
     right: 0;
     bottom: 0;
     width: 148px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     padding: 12px 12px;
@@ -1580,7 +1580,7 @@
     right: 0;
     bottom: 0;
     width: 58%;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     border-radius: 0;

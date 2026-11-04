@@ -248,15 +248,15 @@ function enqueue_styles()
         }
     }
 
-    if (is_page('lien-he-1')) {
+    if (is_page('lien-he-ngay')) {
         if (
             enqueue_css_file(
-                'lien-he-1-css',
-                'lien-he-1.css',
+                'lien-he-ngay-css',
+                'lien-he-ngay.css',
                 $global_deps
             )
         ) {
-            $page_handles[] = 'lien-he-1-css';
+            $page_handles[] = 'lien-he-ngay-css';
         }
     }
 
