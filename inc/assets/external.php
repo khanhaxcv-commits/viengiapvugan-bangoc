@@ -7,17 +7,15 @@
  *
  * Load order:
  *
- * 1. lucide-icons
+ * 1. bootstrap.bundle.min.js
  * ↓
- * 2. bootstrap.bundle.min.js
+ * 2. swiper-bundle.min.css
  * ↓
- * 3. swiper-bundle.min.css
+ * 3. swiper-bundle.min.js
  * ↓
- * 4. swiper-bundle.min.js
+ * 4. gsap.min.js
  * ↓
- * 5. gsap.min.js
- * ↓
- * 6. ScrollTrigger.min.js
+ * 5. ScrollTrigger.min.js
  */
 
 if (!defined('ABSPATH')) {
@@ -54,29 +52,7 @@ if (!function_exists('enqueue_external_assets')) {
     function enqueue_external_assets()
     {
         /**
-         * 1. lucide-icons
-         *
-         * CDN:
-         * Lucide Icons
-         */
-        enqueue_external_script(
-            'lucide-icons',
-            'https://unpkg.com/lucide@latest',
-            array(),
-            null
-        );
-
-        wp_add_inline_script(
-            'lucide-icons',
-            'document.addEventListener("DOMContentLoaded", function() {
-                if (typeof lucide !== "undefined") {
-                    lucide.createIcons();
-                }
-            });'
-        );
-
-        /**
-         * 2. bootstrap.bundle.min.js
+         * 1. bootstrap.bundle.min.js
          *
          * CDN:
          * Bootstrap v5.3.3
@@ -89,7 +65,7 @@ if (!function_exists('enqueue_external_assets')) {
         );
 
         /**
-         * 3. swiper-bundle.min.css
+         * 2. swiper-bundle.min.css
          *
          * CDN:
          * Swiper v11.0.5
@@ -102,7 +78,7 @@ if (!function_exists('enqueue_external_assets')) {
         );
 
         /**
-         * 4. swiper-bundle.min.js
+         * 3. swiper-bundle.min.js
          *
          * CDN:
          * Swiper v11.0.5
@@ -115,7 +91,7 @@ if (!function_exists('enqueue_external_assets')) {
         );
 
         /**
-         * 5. gsap.min.js
+         * 4. gsap.min.js
          *
          * CDN:
          * GSAP v3.7.1
@@ -128,7 +104,7 @@ if (!function_exists('enqueue_external_assets')) {
         );
 
         /**
-         * 6. ScrollTrigger.min.js
+         * 5. ScrollTrigger.min.js
          *
          * CDN:
          * GSAP ScrollTrigger v3.7.1

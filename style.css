@@ -1011,9 +1011,13 @@ body {
   color: var(--primary-dark);
 }
 
-.doctor-header-1778925671507>a [data-lucide] {
+.doctor-header-1778925671507>a>i {
+  display: inline-block;
   width: 16px;
   height: 16px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
 }
 
 /* Äá»‹nh dáº¡ng cÃ¡c tiÃªu Ä‘á» h2 chung á»Ÿ cá»™t trÃ¡i */
@@ -1144,9 +1148,13 @@ h2.h2-1779015313837>span {
   color: var(--primary);
 }
 
-.stats-grid-1781596519792 .stats-item>div:first-child>svg {
+.stats-grid-1781596519792 .stats-item>div:first-child>i {
+  display: inline-block;
   width: 25px;
   height: 25px;
+  font-size: 25px;
+  line-height: 1;
+  text-align: center;
 }
 
 .stats-grid-1781596519792 .stats-item>div:last-child {
@@ -1210,9 +1218,10 @@ h2.h2-1779015313837>span {
     width: 45px;
   }
 
-  .stats-grid-1781596519792 .stats-item>div:first-child>svg {
+  .stats-grid-1781596519792 .stats-item>div:first-child>i {
     width: 22px;
     height: 22px;
+    font-size: 22px;
   }
 }
 
@@ -2284,9 +2293,13 @@ h2.h2-1779015313837>span {
     inset 0 1px 0 rgba(var(--white-rgb), 0.85);
 }
 
-.row-1778951670784 .feature-icon-box svg {
+.row-1778951670784 .feature-icon-box>i {
+  display: inline-block;
   width: 16px;
   height: 16px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
 }
 
 .row-1778951670784 .booking-form-box {
@@ -2408,14 +2421,24 @@ h2.h2-1779015313837>span {
   color: var(--input-text);
 }
 
-.row-1778951670784 .input-wrapper svg {
+.row-1778951670784 .input-wrapper>i {
   position: absolute;
+  display: inline-block;
   right: 16px;
   top: 50%;
   width: 18px;
   height: 18px;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
   pointer-events: none;
   transform: translateY(-50%);
+}
+
+/* Giữ font và độ đậm fa-light khi Flatsome nhận nhầm class icon-*. */
+.row-1778951670784 .input-wrapper>i.fa-light {
+  font-family: var(--fa-family, "Font Awesome 7 Pro") !important;
+  font-weight: var(--fa-style, 300) !important;
 }
 
 .row-1778951670784 .icon-primary,
@@ -2489,15 +2512,19 @@ h2.h2-1779015313837>span {
   transform: translateX(120%);
 }
 
-.row-1778951670784 .btn-submit svg,
+.row-1778951670784 .btn-submit>i,
 .row-1778951670784 .btn-submit span {
   position: relative;
   z-index: 1;
 }
 
-.row-1778951670784 .btn-submit svg {
+.row-1778951670784 .btn-submit>i {
+  display: inline-block;
   width: 21px;
   height: 21px;
+  font-size: 21px;
+  line-height: 1;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
