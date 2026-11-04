@@ -52,7 +52,7 @@ if (!class_exists('Blog_Category_Archive')) {
                 return;
             }
 
-            $pagination_file = get_stylesheet_directory() . '/inc/modules/blog-category-pagination.php';
+            $pagination_file = __DIR__ . '/blog-category-pagination.php';
 
             if (file_exists($pagination_file)) {
                 require_once $pagination_file;

@@ -77,30 +77,19 @@ function hien_thi_mo_ta_danh_muc_custom($description) {
 
 
 
-// Nạp các file giao diện được sao chép nguyên cấu trúc từ vgvg.
-$vgvg_theme_includes = array(
-    'inc/cleanup/disable-wpautop.php',
-    'inc/fonts.php',
-    'inc/enqueue-theme-styles.php',
-    'inc/enqueue-external-assets.php',
-    'inc/enqueue-theme-scripts.php',
-    'inc/enqueue-fontawesome.php',
-    'inc/modules/blog-category-archive.php',
-    'inc/modules/section-background-url.php',
-    'inc/modules/image-url.php',
+// Nạp các nhóm chức năng qua bootstrap.
+$theme_includes = array(
+    'inc/cleanup/bootstrap.php',
+    'inc/assets/bootstrap.php',
+    'inc/blog/bootstrap.php',
+    'inc/modules/bootstrap.php',
+    'inc/integrations/bootstrap.php',
 );
 
-$vgvg_site_host = wp_parse_url(home_url(), PHP_URL_HOST);
+foreach ($theme_includes as $theme_include) {
+    $theme_file = get_stylesheet_directory() . '/' . $theme_include;
 
-if ($vgvg_site_host === 'localhost' || $vgvg_site_host === '127.0.0.1'
-    || substr($vgvg_site_host, -6) === '.local' || substr($vgvg_site_host, -5) === '.test') {
-    $vgvg_theme_includes[] = 'inc/tailwind-database-content.php';
-}
-
-foreach ($vgvg_theme_includes as $vgvg_theme_include) {
-    $vgvg_theme_file = get_stylesheet_directory() . '/' . $vgvg_theme_include;
-
-    if (file_exists($vgvg_theme_file)) {
-        require_once $vgvg_theme_file;
+    if (file_exists($theme_file)) {
+        require_once $theme_file;
     }
 }
