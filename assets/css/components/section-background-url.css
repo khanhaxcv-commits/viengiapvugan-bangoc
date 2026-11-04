@@ -1,0 +1,8 @@
+/* Use native background positioning; allow an auto-height parent on mobile. */
+[data-section-url-bg] > .section-bg > picture,
+[data-section-url-bg] > .section-bg > picture > img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: inherit;
+}

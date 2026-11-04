@@ -1,0 +1,136 @@
+/* =============================*/
+/*  Header                 */
+/*  Thiết lập chiều cao là phải vào 
+Tùy chỉnh ▸ Header ▸ Header Main
+Tùy chỉnh ▸ Header ▸ Header Mobile Menu / Overlay
+Tùy chỉnh ▸ Header ▸ Sticky Header
+Tùy chỉnh ▸ Header ▸ Dropdown Style bỏ tick Default Dropdowns ▸ Add arrow Shows a focusing arrow towards the active menu item.
+/*==============================*/
+
+#header .header-bg-color {
+    background: var(--surface-bg) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-ui);
+}
+
+#header .header-main #logo {
+    margin-right: 0 !important;
+}
+
+#header .header-main #logo img {
+    width: auto !important;
+    height: 70px;
+}
+
+.header-inner>div {
+    height: 100%;
+}
+
+.header-inner>div>* {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#header .nav-right li.html.custom {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-main>li.header-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 48px;
+    padding: 0 18px;
+    color: var(--text-heading) !important;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1 !important;
+    letter-spacing: 0;
+    text-transform: none;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+
+#header .nav-right>li.html.custom>a.btn-default {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+    padding: 0 25px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--button-primary-text) !important;
+    cursor: pointer;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--button-primary-bg), var(--primary-dark));
+    transition:
+        transform var(--transition-ui),
+        box-shadow var(--transition-ui),
+        color var(--transition-ui),
+        background var(--transition-ui),
+        border-color var(--transition-ui),
+        letter-spacing var(--transition-ui);
+}
+
+
+.mobile-nav .nav-icon,
+.mobile-nav .nav-icon .header-button {
+    height: 40px;
+    width: 40px;
+}
+
+.mobile-nav .nav-icon a {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: var(--button-primary-bg) !important;
+}
+
+.mobile-nav .nav-icon a i {
+    top: 0 !important;
+    color: var(--white) !important;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.off-canvas-left .mfp-content {
+    background: var(--bg-dark) !important;
+    width: 100% !important;
+}
+
+@media screen and (max-width: 849px) {
+    #header .header-main .logo {
+        order: 0;
+        margin: 0 !important;
+    }
+
+    #header .header-main #logo img {
+        width: auto !important;
+        height: 53px;
+    }
+
+    #header .header-main .logo img {
+        margin: 0 !important;
+    }
+
+    #header .header-main .show-for-medium {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+}

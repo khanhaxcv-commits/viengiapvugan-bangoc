@@ -1,0 +1,295 @@
+/* ======================================================================================== */
+/* MOBILE SIDEBAR MENU - Flatsome Mobile Off Canvas                                          */
+/* Clean UI - Nested accordion, no hover                                                     */
+/* Scope riêng #main-menu.mobile-sidebar, không ảnh hưởng desktop                            */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar,
+#main-menu.mobile-sidebar * {
+    box-sizing: border-box;
+}
+
+#main-menu.mobile-sidebar {
+    --mb-bg: var(--section-bg);
+    --mb-surface: var(--surface-bg);
+    --mb-border: var(--border-ui);
+    --mb-border-active: var(--border-ui);
+    --mb-heading: var(--text-heading);
+    --mb-text: var(--text-main);
+    --mb-text-muted: var(--text-disabled);
+    --mb-active: var(--primary);
+    --mb-active-bg: var(--badge-primary-bg);
+}
+
+/* ======================================================================================== */
+/* SIDEBAR WRAPPER                                                                           */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .sidebar-menu {
+    padding: 72px 12px 20px;
+    background: var(--mb-bg);
+    min-height: 100dvh;
+}
+
+/* ======================================================================================== */
+/* RESET                                                                                     */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar,
+#main-menu.mobile-sidebar .nav-sidebar ul {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar li {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar a {
+    border: none !important;
+    text-decoration: none;
+}
+
+/* Tắt icon giả trên thẻ a để tránh chồng icon */
+#main-menu.mobile-sidebar .nav-sidebar li>a::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* ======================================================================================== */
+/* LEVEL 1 - MAIN ITEM                                                                        */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar>li {
+    margin-bottom: 16px;
+    border: 1px solid var(--mb-border);
+    border-radius: var(--radius-md);
+    background: var(--mb-surface);
+    box-shadow: var(--shadow-ui-card);
+    overflow: hidden;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar>li>a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    width: 100%;
+    padding: 0 46px 0 14px;
+    color: var(--mb-heading);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    background: transparent !important;
+    border-radius: var(--radius-md);
+    transition:
+        color var(--transition-ui),
+        background-color var(--transition-ui);
+}
+
+/* Level 1 đang mở hoặc là trang hiện tại */
+#main-menu.mobile-sidebar .nav-sidebar>li:is(.is-open, .current-menu-item, .current_page_item) {
+    background: var(--mb-surface);
+    border-color: var(--mb-border-active);
+    box-shadow: 0 10px 26px rgba(var(--primary-rgb), 0.10);
+}
+
+#main-menu.mobile-sidebar .nav-sidebar>li:is(.is-open, .current-menu-item, .current_page_item)>a {
+    color: var(--mb-active);
+    background: var(--mb-active-bg) !important;
+    font-weight: 700;
+}
+
+/* Vạch trái chỉ nằm trên dòng link cấp 1, không kéo dài theo submenu */
+#main-menu.mobile-sidebar .nav-sidebar>li>a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--mb-active);
+    opacity: 0;
+    transition: opacity var(--transition-ui);
+    z-index: 2;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar>li:is(.is-open, .current-menu-item, .current_page_item)>a::before {
+    opacity: 1;
+}
+
+/* ======================================================================================== */
+/* SUBMENU TOGGLE BEHAVIOR                                                                   */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar li:is(.menu-item-has-children, .has-child)>.sub-menu {
+    display: none !important;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar li:is(.menu-item-has-children, .has-child).is-open>.sub-menu {
+    display: block !important;
+}
+
+/* ======================================================================================== */
+/* SUBMENU STRUCTURE                                                                          */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu {
+    position: relative;
+    margin: 2px 0;
+    padding: 2px;
+    background: transparent;
+}
+
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu .sub-menu {
+    margin: 2px 0 0;
+    /* padding-left: 12px; */
+}
+
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu li {
+    margin: 2px 0;
+    border: none;
+    background: transparent;
+}
+
+/* ======================================================================================== */
+/* SUBMENU LINK - SHARED                                                                      */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu li>a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    width: 100%;
+    padding: 0 42px 0 12px;
+    color: var(--mb-text);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: 0;
+    text-transform: none;
+    background: transparent !important;
+    border-radius: 10px;
+    transition:
+        color var(--transition-ui),
+        background-color var(--transition-ui);
+}
+
+/* Submenu item đang mở */
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu li.is-open>a {
+    color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.08) !important;
+    font-weight: 600;
+}
+
+/* ======================================================================================== */
+/* TOGGLE BUTTON - Flatsome default + JS generated                                           */
+/* ======================================================================================== */
+
+#main-menu.mobile-sidebar .nav-sidebar li> :is(button.toggle, button.mobile-submenu-toggle) {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--mb-text-muted) !important;
+    cursor: pointer;
+    opacity: 1 !important;
+    z-index: 20 !important;
+    transform: rotate(0deg) !important;
+    transform-origin: center center;
+    transition:
+        color var(--transition-ui),
+        transform var(--transition-ui);
+}
+
+/* Cấp 1 cao 46px */
+#main-menu.mobile-sidebar .nav-sidebar>li> :is(button.toggle, button.mobile-submenu-toggle) {
+    width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+}
+
+/* Cấp con thấp hơn */
+#main-menu.mobile-sidebar .nav-sidebar .sub-menu li> :is(button.toggle, button.mobile-submenu-toggle) {
+    width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+}
+
+/* Ẩn icon mặc định của Flatsome */
+#main-menu.mobile-sidebar .nav-sidebar li>button.toggle :is(i, .icon-angle-down),
+#main-menu.mobile-sidebar .nav-sidebar li>button.toggle :is(i, .icon-angle-down)::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Nếu có cả toggle mặc định và custom thì ẩn custom dư */
+#main-menu.mobile-sidebar .nav-sidebar li>button.toggle~button.mobile-submenu-toggle {
+    display: none !important;
+}
+
+/* Icon duy nhất: pseudo chỉ dùng để vẽ icon, không xoay pseudo */
+#main-menu.mobile-sidebar .nav-sidebar li> :is(button.toggle, button.mobile-submenu-toggle)::before {
+    content: "\f107" !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-family: "Font Awesome 7 Pro" !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: currentColor;
+    transform: none !important;
+    transition: color var(--transition-ui);
+}
+
+/* Open state: đổi màu và xoay cả button */
+#main-menu.mobile-sidebar .nav-sidebar li.is-open> :is(button.toggle, button.mobile-submenu-toggle) {
+    color: var(--link-color) !important;
+    transform: rotate(180deg) !important;
+}
+
+/* Item có submenu chừa chỗ cho nút */
+#main-menu.mobile-sidebar .nav-sidebar li:is(.menu-item-has-children, .has-child)>a {
+    padding-right: 44px !important;
+}
+
+/* ======================================================================================== */
+/* OFFCANVAS CLOSE BUTTON                                                                     */
+/* ======================================================================================== */
+
+.mfp-wrap.off-canvas .mfp-close {
+    top: 12px !important;
+    right: 14px !important;
+    width: 36px !important;
+    height: 36px !important;
+    color: var(--text-sub) !important;
+    opacity: 1 !important;
+}
+
+.mfp-wrap.off-canvas .mfp-close:hover {
+    color: var(--link-color) !important;
+}
