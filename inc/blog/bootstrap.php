@@ -4,6 +4,7 @@ defined('ABSPATH') || exit;
 
 $blog_modules = array(
     'blog-category-archive.php',
+    'single-post.php',
 );
 
 foreach ($blog_modules as $blog_module) {

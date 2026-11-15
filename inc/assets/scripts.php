@@ -130,6 +130,10 @@ if (!function_exists('enqueue_theme_scripts')) {
                 )
             )
         );
+
+        if (wp_script_is('contact-form-7', 'enqueued')) {
+            enqueue_script_file('contact-form-7-ui-js', 'contact-form-7.js', array('contact-form-7'));
+        }
     }
 }
 

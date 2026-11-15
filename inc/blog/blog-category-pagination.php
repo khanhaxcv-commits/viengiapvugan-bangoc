@@ -59,8 +59,8 @@ if (!function_exists('blog_category_posts_pagination')) {
             $tag = $is_disabled ? 'span' : 'a';
 
             $enabled_classes = $desktop
-                ? 'inline-flex gap-1 h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-purple-300 hover:text-purple-700'
-                : 'inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors active:bg-purple-50';
+                ? '!inline-flex gap-1 h-10 items-center justify-center rounded-xl border border-solid border-purple-200 bg-purple-50 px-3 text-sm font-semibold !text-purple-800 shadow-sm transition-colors hover:border-purple-300 hover:bg-purple-100 hover:!text-purple-900 active:bg-purple-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600'
+                : '!inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-solid border-purple-200 bg-purple-50 px-3 text-sm font-semibold !text-purple-800 shadow-sm transition-colors hover:border-purple-300 hover:bg-purple-100 hover:!text-purple-900 active:bg-purple-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600';
 
             $disabled_classes = $desktop
                 ? 'inline-flex h-10 cursor-not-allowed select-none items-center justify-center rounded-xl border border-slate-200 !bg-[#E4E7EC] px-3 text-sm font-semibold text-slate-400'

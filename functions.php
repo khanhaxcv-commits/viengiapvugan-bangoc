@@ -81,6 +81,7 @@ function hien_thi_mo_ta_danh_muc_custom($description) {
 $theme_includes = array(
     'inc/cleanup/bootstrap.php',
     'inc/assets/bootstrap.php',
+    'inc/shared/bootstrap.php',
     'inc/blog/bootstrap.php',
     'inc/modules/bootstrap.php',
     'inc/integrations/bootstrap.php',

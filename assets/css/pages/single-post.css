@@ -1,0 +1,261 @@
+/* Tiêu đề bài viết: mobile trước, desktop từ breakpoint Flatsome 850px. */
+.single-post-1794670961990 h1.post-title-1794711386087 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  overflow-wrap: break-word;
+}
+
+/* Nội dung bài viết. Không ảnh hưởng trang danh mục, sidebar hoặc khối tác giả. */
+.single-post-1794670961990 .entry-content.single-page {
+  padding: 0 !important;
+  color: #334155 !important;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+/* Loại trừ nội dung bên trong #ftwp-container để giữ định dạng riêng của plugin mục lục. */
+.single-post-1794670961990 .entry-content h2:not(:where(#ftwp-container *)) {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #0f172a !important;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.single-post-1794670961990 .entry-content h3:not(:where(#ftwp-container *)) {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  color: #0f172a !important;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+/* Đoạn văn và danh sách. */
+.single-post-1794670961990 .entry-content :is(p, ul, ol):not(:where(#ftwp-container *)) {
+  margin-bottom: 12px;
+}
+
+/* Một số bài dùng class entry-title cho đoạn Xem thêm; đây vẫn là đoạn văn. */
+.single-post-1794670961990 .entry-content p.entry-title:not(:where(#ftwp-container *)) {
+  margin-top: 12px;
+}
+
+.single-post-1794670961990 .entry-content :is(ul, ol):not(:where(#ftwp-container *)) {
+  margin: 0 0 12px;
+  padding-left: 24px;
+  list-style-position: outside;
+}
+
+.single-post-1794670961990 .entry-content ul:not(:where(#ftwp-container *)) {
+  list-style-type: disc;
+}
+
+.single-post-1794670961990 .entry-content ol:not(:where(#ftwp-container *)) {
+  list-style-type: decimal;
+}
+
+.single-post-1794670961990 .entry-content li:not(:where(#ftwp-container *)) {
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+/* Chỉ thụt thêm một cấp, không cộng margin 48px/1.3em của Flatsome. */
+.single-post-1794670961990 .entry-content li > :is(ul, ol):not(:where(#ftwp-container *)) {
+  margin: 8px 0 0;
+}
+
+.single-post-1794670961990 .entry-content :is(ul, ol) ul:not(:where(#ftwp-container *)) {
+  list-style-type: circle;
+}
+
+.single-post-1794670961990 .entry-content :is(ul, ol) :is(ul, ol) ul:not(:where(#ftwp-container *)) {
+  list-style-type: square;
+}
+
+/* Mục cuối không thêm khoảng trống vào khoảng cách dưới của cả danh sách. */
+.single-post-1794670961990 .entry-content li:last-child:not(:where(#ftwp-container *)) {
+  margin-bottom: 0;
+}
+
+/* Tránh cộng cả khoảng cách đoạn văn lẫn khoảng cách mục danh sách. */
+.single-post-1794670961990 .entry-content li:not(:where(#ftwp-container *)) > :last-child {
+  margin-bottom: 0;
+}
+
+/* Liên kết trong bài viết. */
+.single-post-1794670961990 .entry-content a:not(:where(#ftwp-container *)) {
+  color: #7e22ce !important;
+  font-weight: 600;
+}
+
+.single-post-1794670961990 .entry-content a:not(:where(#ftwp-container *)):hover {
+  text-decoration-line: underline;
+}
+
+/* Bảng nội dung: giữ cỡ chữ 16px, tự xuống dòng trong từng ô trên mobile. */
+.single-post-1794670961990 .entry-content table:not(:where(#ftwp-container *)) {
+  width: 100%;
+  margin: 16px 0;
+  border: 1px solid var(--border-ui);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed;
+  background: #fff;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.single-post-1794670961990 .entry-content :is(th, td):not(:where(#ftwp-container *)) {
+  padding: 10px 12px;
+  border: 0;
+  border-right: 1px solid var(--border-ui);
+  border-bottom: 1px solid var(--border-ui);
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+/* Chừa 32% cho nhãn của bảng hai cột; cột mô tả có nhiều không gian hơn. */
+.single-post-1794670961990 .entry-content tr:has(> :nth-child(2):last-child) > :first-child:not(:where(#ftwp-container *)) {
+  width: 32%;
+}
+
+.single-post-1794670961990 .entry-content tr > :last-child:not(:where(#ftwp-container *)) {
+  border-right: 0;
+}
+
+.single-post-1794670961990 .entry-content tbody:last-child > tr:last-child > :is(th, td):not(:where(#ftwp-container *)) {
+  border-bottom: 0;
+}
+
+.single-post-1794670961990 .entry-content tbody > tr:nth-child(even):not(:where(#ftwp-container *)) {
+  background: #fcfafd;
+}
+
+/* Hỗ trợ cả thead và bảng Classic dùng hàng td đầu tiên làm tiêu đề. */
+.single-post-1794670961990 .entry-content thead > tr > :is(th, td):not(:where(#ftwp-container *)),
+.single-post-1794670961990 .entry-content table:not(:has(thead)) > tbody > tr:first-child > :is(th, td):not(:where(#ftwp-container *)) {
+  background: var(--primary-50);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.single-post-1794670961990 .entry-content :is(th, td) > :last-child:not(:where(#ftwp-container *)) {
+  margin-bottom: 0;
+}
+
+/* Hình ảnh giữ nguyên tỷ lệ, bo góc, không crop nội dung. */
+.single-post-1794670961990 .entry-content img:not(:where(#ftwp-container *)) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.single-post-1794670961990 .entry-content :is(figure, .wp-caption):not(:where(#ftwp-container *)) {
+  max-width: 100%;
+  margin: 16px auto;
+}
+
+/* Ảnh không có figure/wp-caption cũng có khoảng thở; không cộng margin hai lần. */
+.single-post-1794670961990 .entry-content img:not(:where(#ftwp-container *, figure *, .wp-caption *)) {
+  margin: 16px auto;
+}
+
+/* Ảnh và chú thích là một khối liền nhau, bo góc ở mép ngoài. */
+.single-post-1794670961990 .entry-content :is(figure, .wp-caption):has(> :is(figcaption, .wp-caption-text)) {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.single-post-1794670961990 .entry-content :is(figure, .wp-caption):has(> :is(figcaption, .wp-caption-text)) img {
+  margin: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.single-post-1794670961990 .entry-content :is(figcaption, .wp-caption-text):not(:where(#ftwp-container *)) {
+  margin: 0;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+@media (min-width: 850px) {
+  /* Giữ Row/gutter native, giới hạn phần chữ 800px và căn giữa hai cột. */
+  .single-post .blog-single > .row,
+  .single-post .post-breadcrumb-1794670961990 > .row {
+    justify-content: center;
+  }
+
+  .single-post .blog-single > .row > .large-9,
+  .single-post .post-breadcrumb-1794670961990 > .row > .large-9 {
+    flex-basis: 66.666667%;
+    min-width: 0;
+    max-width: 860px;
+  }
+
+  .single-post .blog-single > .row > .large-3,
+  .single-post .post-breadcrumb-1794670961990 > .row > .large-3 {
+    flex-basis: 33.333333%;
+    min-width: 0;
+    max-width: 33.333333%;
+  }
+
+  .single-post-1794670961990 h1.post-title-1794711386087 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .single-post-1794670961990 .entry-content h2:not(:where(#ftwp-container *)) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .single-post-1794670961990 .entry-content h3:not(:where(#ftwp-container *)) {
+    margin-top: 16px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .single-post-1794670961990 .entry-content :is(th, td):not(:where(#ftwp-container *)) {
+    padding: 12px 16px;
+  }
+
+  .single-post-1794670961990 .entry-content :is(figure, .wp-caption):not(:where(#ftwp-container *)),
+  .single-post-1794670961990 .entry-content img:not(:where(#ftwp-container *, figure *, .wp-caption *)) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .single-post .blog-single > .row > .large-9,
+  .single-post .post-breadcrumb-1794670961990 > .row > .large-9 {
+    flex-basis: calc(100% - 380px);
+  }
+
+  .single-post .blog-single > .row > .large-3,
+  .single-post .post-breadcrumb-1794670961990 > .row > .large-3 {
+    flex-basis: 380px;
+    max-width: 380px;
+  }
+}

@@ -6,7 +6,7 @@
 .category .blog-wrapper.page-wrapper {
   padding-top: 0;
   padding-bottom: 0;
-  background: #F2F4F7;
+  background: var(--surface-bg);
 }
 
 .category .blog-wrapper>.row>.large-10,

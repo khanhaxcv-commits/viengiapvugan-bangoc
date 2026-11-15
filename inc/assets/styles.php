@@ -134,6 +134,10 @@ function enqueue_styles()
         ? array('global-css')
         : array('flatsome-child-style');
 
+    if (defined('WPCF7_VERSION') && enqueue_css_file('contact-form-7-ui-css', 'components/contact-form-7.css', $global_deps)) {
+        $global_deps[] = 'contact-form-7-ui-css';
+    }
+
     /*
      * 5. Header CSS
      */
@@ -199,6 +203,22 @@ function enqueue_styles()
      * 9. Page-specific styles
      */
     $page_handles = array();
+
+    if (is_singular('post')) {
+        if (
+            enqueue_css_file(
+                'single-post-css',
+                'pages/single-post.css',
+                $global_deps
+            )
+        ) {
+            $page_handles[] = 'single-post-css';
+        }
+
+        if (enqueue_css_file('post-sidebar-css', 'pages/post-sidebar.css', array('single-post-css'))) {
+            $page_handles[] = 'post-sidebar-css';
+        }
+    }
 
     if (is_front_page() || is_page('trang-chu-1')) {
         if (

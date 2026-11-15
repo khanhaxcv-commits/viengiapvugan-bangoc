@@ -8,6 +8,7 @@ defined('ABSPATH') || exit;
 
 $integration_modules = array(
     'all-in-one-wp-migration.php',
+    'fixed-toc.php',
 );
 
 foreach ($integration_modules as $integration_module) {

@@ -7,6 +7,12 @@ Tùy chỉnh ▸ Header ▸ Sticky Header
 Tùy chỉnh ▸ Header ▸ Dropdown Style bỏ tick Default Dropdowns ▸ Add arrow Shows a focusing arrow towards the active menu item.
 /*==============================*/
 
+.header-shadow .header-wrapper,
+.header-wrapper.stuck,
+.layout-shadow #wrapper {
+    box-shadow: none;
+}
+
 #header .header-bg-color {
     background: var(--surface-bg) !important;
     backdrop-filter: blur(12px);

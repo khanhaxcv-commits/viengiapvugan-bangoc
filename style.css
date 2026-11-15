@@ -221,7 +221,7 @@ Version: 3.0
   /* ==================================================
      FONT
   ================================================== */
-  --font-display: "Be Vietnam Pro", sans-serif;
+  --font-display: "Inter", sans-serif;
 
   /* ==================================================
      UI TOKENS
@@ -280,9 +280,13 @@ Version: 3.0
   --shadow-ui-strong: var(--shadow-strong);
 }
 
+html {
+  font-family: var(--font-display);
+}
+
 body {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-display) !important;
   color: var(--text-main);
   background: var(--page-bg);
   line-height: 1.5;
@@ -1699,7 +1703,6 @@ h2.h2-1779015313837>span {
 
 .blog-1782808304761 .post-title {
   color: var(--primary-dark);
-  font-family: var(--font-display);
   font-size: 17px;
   font-weight: 800;
   line-height: 1.42;
@@ -1727,7 +1730,6 @@ h2.h2-1779015313837>span {
 
 .blog-1782808304761 .from_the_blog_excerpt {
   color: var(--text-sub);
-  font-family: var(--font-display);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.65;
@@ -1749,7 +1751,6 @@ h2.h2-1779015313837>span {
   background: transparent !important;
   box-shadow: none !important;
   color: var(--primary);
-  font-family: var(--font-display);
   font-size: 14px;
   font-weight: 800;
   line-height: 1.4;
@@ -1898,21 +1899,6 @@ h2.h2-1779015313837>span {
 /* Form lien he trang chi tiet bai viet          */
 /* Class: cvn-consult-form             */
 /* ************************************/
-.wpcf7-spinner {
-  display: none !important;
-}
-
-.wpcf7 .wpcf7-not-valid-tip {
-  top: 0 !important;
-  margin-top: 0 !important;
-  background-color: none !important;
-  background: none !important;
-}
-
-.wpcf7 .wpcf7-not-valid-tip:after {
-  content: none !important;
-}
-
 .cvn-consult-form {
   position: relative;
   padding: 1px;
@@ -2008,7 +1994,6 @@ h2.h2-1779015313837>span {
   border-radius: 999px;
   background: var(--input-bg) !important;
   color: var(--input-text);
-  font-family: var(--font-display);
   font-size: 14px;
   line-height: 1;
   font-weight: 400;
@@ -2048,7 +2033,6 @@ h2.h2-1779015313837>span {
   border-radius: 22px;
   background: var(--input-bg);
   color: var(--input-text);
-  font-family: var(--font-display);
   font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
@@ -2094,7 +2078,6 @@ h2.h2-1779015313837>span {
   border-radius: 999px;
   background: var(--white) !important;
   color: var(--primary-dark);
-  font-family: var(--font-display);
   font-size: 15px;
   line-height: 1;
   font-weight: 800;
@@ -2156,12 +2139,6 @@ h2.h2-1779015313837>span {
 
 .cvn-consult-form br {
   display: none;
-}
-
-.cvn-consult-form input,
-.cvn-consult-form textarea,
-.cvn-consult-form button {
-  font-family: var(--font-display);
 }
 
 @media (max-width: 767px) {

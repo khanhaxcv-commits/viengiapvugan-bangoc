@@ -1,0 +1,192 @@
+/* Widget gốc từ admin/UX Builder. Giữ nguyên wrapper sticky của Flatsome. */
+.single-post .post-sidebar #secondary > .widget {
+  margin: 0;
+}
+
+.single-post .post-sidebar #secondary > .widget + .widget {
+  margin-top: 20px;
+}
+
+.single-post .post-sidebar .block-sidebar > .col {
+  padding-bottom: 0;
+}
+
+.single-post .post-sidebar .block-sidebar > .col > .col-inner,
+.single-post .post-sidebar .wpcf7,
+.single-post .post-sidebar .parent-category-posts-grid {
+  padding: 16px;
+  border: 1px solid var(--border-ui);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(59, 15, 79, 0.045);
+  color: var(--text-soft);
+}
+
+/* Khối giới thiệu: giữ đủ nội dung, logo và các liên kết được cấu hình trong UX Block. */
+.single-post .post-sidebar .block-sidebar .icon-box-img {
+  width: 220px !important;
+  max-width: 100%;
+  margin: 0 auto 16px;
+}
+
+.single-post .post-sidebar .block-sidebar .icon-inner img {
+  width: 100%;
+  height: auto;
+}
+
+.single-post .post-sidebar .block-sidebar .icon-box-text {
+  padding: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.single-post .post-sidebar .block-sidebar .icon-box-text p {
+  margin: 0 0 12px;
+}
+
+.single-post .post-sidebar .follow-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-ui);
+}
+
+.single-post .post-sidebar #secondary .follow-icons a.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 0;
+  border: 1px solid var(--border-ui);
+  border-radius: 50%;
+  background: var(--primary-50);
+  color: var(--primary);
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: none;
+  transition: background-color 160ms, color 160ms, border-color 160ms;
+}
+
+.single-post .post-sidebar #secondary .follow-icons a.icon:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Nền thẻ riêng của sidebar; ô nhập và thông báo dùng CSS CF7 chung. */
+.single-post .post-sidebar .wpcf7 {
+  background: var(--primary-50);
+}
+
+/* Bài viết mới nhất: thumbnail và tiêu đề cân đối, không bị min-width 320px cũ. */
+.single-post .post-sidebar .parent-category-posts-grid {
+  margin: 0;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid > p {
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-ui);
+  color: var(--primary-dark);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-item + .post-item {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-ui);
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-inner {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-inner:not(:has(.post-thumb)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-thumb {
+  width: 100%;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-info {
+  min-width: 0;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-title {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  transition: color 160ms;
+}
+
+.single-post .post-sidebar .parent-category-posts-grid .post-inner:hover {
+  color: var(--primary);
+}
+
+.single-post .post-sidebar a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1200px) {
+  .single-post .post-sidebar .block-sidebar > .col > .col-inner,
+  .single-post .post-sidebar .wpcf7,
+  .single-post .post-sidebar .parent-category-posts-grid {
+    padding: 20px;
+  }
+
+  .single-post .post-sidebar .parent-category-posts-grid .post-inner {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1023px) {
+  .single-post .post-sidebar .parent-category-posts-grid .post-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .single-post .post-sidebar :is(a, .post-title) {
+    transition: none !important;
+  }
+}

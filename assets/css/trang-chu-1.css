@@ -7,18 +7,18 @@
     display: grid;
 }
 
-.trang-chu-1778919925187[data-section-url-bg] > .section-bg {
+.trang-chu-1778919925187[data-section-url-bg]>.section-bg {
     grid-area: 1 / 1;
     position: relative;
     height: auto;
 }
 
-.trang-chu-1778919925187[data-section-url-bg] > .section-bg > picture,
-.trang-chu-1778919925187[data-section-url-bg] > .section-bg > picture > img.bg {
+.trang-chu-1778919925187[data-section-url-bg]>.section-bg>picture,
+.trang-chu-1778919925187[data-section-url-bg]>.section-bg>picture>img.bg {
     height: auto;
 }
 
-.trang-chu-1778919925187[data-section-url-bg] > .section-content {
+.trang-chu-1778919925187[data-section-url-bg]>.section-content {
     grid-area: 1 / 1;
 }
 
@@ -1292,7 +1292,7 @@
 /* Giữ chuỗi chiều cao của Image native khi image_url bọc ảnh bằng picture. */
 .section-1782557540314 .benefit-media .img-inner,
 .section-1782557540314 .benefit-media picture[data-image-url],
-.section-1782557540314 .benefit-img-bottom > .img {
+.section-1782557540314 .benefit-img-bottom>.img {
     height: 100%;
 }
 
@@ -1811,7 +1811,6 @@
     position: relative;
     background: var(--section-bg);
     overflow: hidden;
-    font-family: var(--font-display);
 }
 
 .section-1782758626132 .row-1782799603235 {

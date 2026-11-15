@@ -1,0 +1,174 @@
+/* Markup hệ thống của Fixed TOC được chuyển ra ngoài article khi nổi. */
+body.single-post #ftwp-container-outer {
+  margin: 0 0 16px;
+}
+
+body.single-post #ftwp-container #ftwp-contents {
+  height: auto !important;
+  overflow: hidden;
+  border: 1px solid var(--border-ui);
+  border-radius: 12px;
+  background: #fff;
+}
+
+body.single-post #ftwp-container #ftwp-header {
+  position: relative;
+  min-height: 48px;
+  padding: 12px 44px 12px 42px;
+  color: var(--primary);
+  background: var(--primary-50);
+  border-bottom: 1px solid var(--border-ui);
+  cursor: pointer;
+}
+
+body.single-post #ftwp-container #ftwp-header-title {
+  margin: 0;
+  padding: 0;
+  color: var(--primary-dark);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+body.single-post #ftwp-container #ftwp-header-control,
+body.single-post #ftwp-container #ftwp-header-minimize {
+  position: absolute;
+  float: none;
+  top: 0;
+  width: 40px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+  line-height: 48px;
+  text-align: center;
+}
+
+body.single-post #ftwp-container #ftwp-header-control { left: 0; }
+body.single-post #ftwp-container #ftwp-header-minimize { right: 0; }
+
+body.single-post #ftwp-container #ftwp-contents:hover #ftwp-header {
+  background: var(--primary-50);
+}
+
+body.single-post #ftwp-container #ftwp-list {
+  height: auto;
+  max-height: min(360px, calc(100dvh - var(--vgv-toc-top, 130px) - 72px));
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  font-family: var(--font-display);
+}
+
+/* Bảng nổi cần chiều cao tự nhiên; trong bài để JS trượt chiều cao của danh sách. */
+body.single-post #ftwp-container.ftwp-fixed-to-post #ftwp-list {
+  height: auto !important;
+}
+
+body.single-post #ftwp-container #ftwp-contents:hover #ftwp-list {
+  background: #fff;
+}
+
+body.single-post #ftwp-container #ftwp-list .ftwp-item {
+  margin: 0;
+  padding: 0;
+}
+
+body.single-post #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor {
+  display: block;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #334155 !important;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+/* Tiêu đề biên tập đã có số; tắt số và hiệu ứng màu tự sinh của plugin. */
+body.single-post #ftwp-container #ftwp-list .ftwp-anchor::before,
+body.single-post #ftwp-container #ftwp-list .ftwp-text::before {
+  display: none;
+  content: none;
+}
+
+body.single-post #ftwp-container #ftwp-list .ftwp-text {
+  padding: 0;
+  font-size: inherit !important;
+}
+
+body.single-post #ftwp-container #ftwp-list .ftwp-anchor:hover,
+body.single-post #ftwp-container #ftwp-list .ftwp-anchor:focus-visible {
+  color: var(--primary) !important;
+  background: var(--primary-50);
+}
+
+body.single-post #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor.ftwp-active {
+  color: var(--primary-hover) !important;
+  background: var(--primary-100);
+}
+
+body.single-post #ftwp-container .ftwp-anchor:focus-visible,
+body.single-post #ftwp-container button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+body.single-post #ftwp-container.ftwp-fixed-to-post #ftwp-contents {
+  top: var(--vgv-toc-top, 130px) !important;
+  bottom: auto !important;
+  width: min(320px, calc(100vw - 32px));
+  margin: 0;
+  box-shadow: 0 8px 28px rgba(59, 15, 79, 0.14);
+}
+
+body.single-post #ftwp-container #ftwp-trigger {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  line-height: 46px;
+  box-shadow: 0 4px 16px rgba(59, 15, 79, 0.16);
+}
+
+body.single-post #ftwp-container.ftwp-fixed-to-post #ftwp-trigger {
+  top: var(--vgv-toc-top, 130px) !important;
+  bottom: auto !important;
+  margin: 0;
+}
+
+body.single-post #ftwp-container #ftwp-trigger:hover {
+  background: var(--primary-hover);
+}
+
+body.single-post #ftwp-postcontent .ftwp-heading {
+  scroll-margin-top: calc(var(--vgv-toc-top, 130px) + 4px);
+}
+
+body.single-post #ftwp-postcontent .ftwp-heading-target::before {
+  background: var(--primary-100);
+}
+
+@media (max-width: 849px) {
+  body.single-post #ftwp-container.ftwp-fixed-to-post #ftwp-contents,
+  body.single-post #ftwp-container.ftwp-fixed-to-post #ftwp-trigger {
+    right: 16px !important;
+    left: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.single-post #ftwp-container,
+  body.single-post #ftwp-container #ftwp-contents,
+  body.single-post #ftwp-container #ftwp-trigger {
+    animation: none !important;
+    transition: none !important;
+  }
+}

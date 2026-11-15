@@ -28,7 +28,7 @@ if (!class_exists('Blog_Category_Archive')) {
 
             add_action('wp', array(__CLASS__, 'hide_default_archive_title'));
 
-            add_action('flatsome_after_header', array(__CLASS__, 'render_hero'), 6);
+            add_action('flatsome_after_header', array(__CLASS__, 'render_breadcrumb'), 6);
 
             add_filter('theme_mod_blog_layout', array(__CLASS__, 'use_full_width_layout'));
 
@@ -351,9 +351,9 @@ if (!class_exists('Blog_Category_Archive')) {
         }
 
         /**
-         * Render category hero after Flatsome header.
+         * Hiển thị breadcrumb danh mục ngay dưới header Flatsome.
          */
-        public static function render_hero()
+        public static function render_breadcrumb()
         {
             if (!is_category()) {
                 return;
@@ -365,40 +365,15 @@ if (!class_exists('Blog_Category_Archive')) {
                 return;
             }
 
-            // Breadcrumb is rendered inside the archive content heading.
-
-            /*
-             * Legacy category hero UI.
-             *
-             * Retained in the template for reference but intentionally disabled.
-             */
-            if (false) :
-                $hero_image_url = self::get_hero_image_url((int) $term->term_id);
-                $description = term_description((int) $term->term_id, 'category');
         ?>
-                <section
-                    class="blog-category-hero"
-                    style="--blog-category-hero-image: url('<?php echo esc_url($hero_image_url); ?>');">
-                    <div class="blog-category-hero__overlay"></div>
-
-                    <div class="blog-category-hero__inner container">
-                        <div class="blog-category-hero__content">
-                            <?php echo self::get_breadcrumb_html($term); ?>
-
-                            <h1 class="blog-category-hero__title">
-                                <?php echo esc_html(single_cat_title('', false)); ?>
-                            </h1>
-
-                            <?php if ($description) : ?>
-                                <div class="blog-category-hero__description">
-                                    <?php echo wp_kses_post($description); ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+            <div class="bg-[#EDF0F3] py-3">
+                <div class="row">
+                    <div class="col small-12 !pb-0">
+                        <?php echo self::get_simple_breadcrumb_html($term); ?>
                     </div>
-                </section>
+                </div>
+            </div>
         <?php
-            endif;
         }
 
         /**
@@ -442,24 +417,24 @@ if (!class_exists('Blog_Category_Archive')) {
             ob_start();
         ?>
             <nav
-                class="mb-1 flex max-w-full items-center gap-1.5 overflow-x-auto whitespace-nowrap text-xs font-semibold uppercase tracking-wider text-purple-700 sm:text-sm"
+                class="m-0 !flex max-w-full items-center gap-2 overflow-hidden whitespace-nowrap text-sm font-medium !text-slate-700"
                 aria-label="Breadcrumb">
                 <?php foreach ($items as $index => $item) : ?>
                     <?php if ($index > 0) : ?>
-                        <i
-                            class="fa-light fa-chevron-right shrink-0 text-xs text-purple-300<?php echo $index > 1 ? ' hidden sm:inline-block' : ''; ?>"
-                            aria-hidden="true"></i>
+                        <span class="shrink-0 !text-slate-400" aria-hidden="true">/</span>
                     <?php endif; ?>
 
                     <?php if ($item['url'] !== '') : ?>
                         <a
                             href="<?php echo esc_url($item['url']); ?>"
-                            class="shrink-0 transition-colors hover:text-purple-900<?php echo $index > 1 ? ' hidden sm:inline' : ''; ?>">
+                            class="<?php echo $index === 0 ? 'shrink-0' : 'min-w-0 truncate'; ?> !text-purple-700 transition-colors hover:!text-purple-900 focus-visible:outline-purple-700"
+                            title="<?php echo esc_attr($item['label']); ?>">
                             <?php echo esc_html($item['label']); ?>
                         </a>
                     <?php else : ?>
                         <span
-                            class="truncate text-purple-900<?php echo $index > 1 ? ' hidden sm:inline' : ''; ?>"
+                            class="min-w-0 truncate !text-slate-900"
+                            title="<?php echo esc_attr($item['label']); ?>"
                             aria-current="page">
                             <?php echo esc_html($item['label']); ?>
                         </span>
