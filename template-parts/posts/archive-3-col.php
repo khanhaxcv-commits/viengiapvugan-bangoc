@@ -3,7 +3,7 @@
 /**
  * Posts category archive.
  *
- * Render the current category branch in the left sidebar and posts from the current
+ * Render the full category tree in the left sidebar and posts from the current
  * category in a responsive four-column Tailwind grid.
  */
 
@@ -42,15 +42,30 @@ $current_category_id = $current_category instanceof WP_Term
     ? (int) $current_category->term_id
     : 0;
 
+// Giữ nguyên cây danh mục khi chuyển giữa danh mục cha và các mục con.
+$sidebar_root_id = $current_category_id;
+
+if ($current_category_id > 0) {
+    $ancestor_ids = get_ancestors($current_category_id, 'category', 'taxonomy');
+
+    if (!empty($ancestor_ids)) {
+        $sidebar_root_id = (int) end($ancestor_ids);
+    }
+}
+
+$sidebar_root_category = $sidebar_root_id === $current_category_id
+    ? $current_category
+    : get_category($sidebar_root_id);
+
 $sidebar_categories = get_categories(array(
-    'child_of'   => $current_category_id,
+    'child_of'   => $sidebar_root_id,
     'hide_empty' => true,
     'orderby'    => 'name',
     'order'      => 'ASC',
 ));
 
-if ($current_category instanceof WP_Term) {
-    array_unshift($sidebar_categories, $current_category);
+if ($sidebar_root_category instanceof WP_Term) {
+    array_unshift($sidebar_categories, $sidebar_root_category);
 }
 
 $category_ids = array_fill_keys(
